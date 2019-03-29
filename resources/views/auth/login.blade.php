@@ -81,7 +81,7 @@
     </div> --}}
     <!-- /.social-auth-links -->
     <div style="text-align: center;">
-        <a  href="{{ route('password.request') }}" >¡Qué pendejo! Olvide mi contraseña</a>
+        <a  href="{{ route('password.request') }}" >¡Qué pendejo! Olvidé mi contraseña</a>
     </div>
 
     {{-- <a href="register.html" class="text-center">Register a new membership</a> --}}
