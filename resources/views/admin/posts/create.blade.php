@@ -18,14 +18,25 @@
         <div class="box box-primary">
                 <div class="box-body">
                     <!--Título del Post-->
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                         <label>Título del Post</label>
-                        <input name="title" class="form-control" placeholder="Ingresa el título del post">
+                        <input name="title"
+                        class="form-control"
+                        value="{{old('title')}}"
+                        placeholder="Ingresa el título del post">
                     </div>
+                    <!--En caso que haya error con el título del post, imprimimos un mensaje-->
+                    {!! $errors->first('title', '<span class="help-block">:message</span>') !!}
                     <!--Contenido del Post-->
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
                         <label>Contenido del Post</label>
-                        <textarea name="body" rows="10" id="editor" class="form-control" placeholder="Escribe aquí el Post completo..."></textarea>
+                        <textarea name="body"
+                        rows="10"
+                        id="editor"
+                        class="form-control"
+                        placeholder="Escribe aquí el Post completo...">{{old('body')}}</textarea>
+                        <!--En caso que haya error con el contenido del post, imprimimos un mensaje-->
+                        {!! $errors->first('body', '<span class="help-block">:message</span>') !!}
                     </div>
                 </div>
         </div>
@@ -40,24 +51,37 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input name="published_at" type="text" class="form-control pull-right" id="datepicker">
+                                <input name="published_at"
+                                type="text"
+                                class="form-control pull-right"
+                                value {{old('published_at')}}
+                                id="datepicker">
                             </div>
                             <!-- /.input group -->
                         </div>
                         <!--Categoría a la que pertenece el Post-->
-                        <div class="form-group">
+                        <div class="form-group {{ $errors->has('category') ? 'has-error' : '' }}">
                             <label>Categorías</label>
                             <select name="category" class="form-control">
                                 <option value="">Selecciona una categoría</option>
                                 @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->id }}.- {{ $category->name }}</option>
+                                    <option value="{{ $category->id }}"
+                                    {{old('category') == $category->id ? 'selected' : ''}}
+                                    >{{ $category->id }}.- {{ $category->name }}</option>
                                 @endforeach
                             </select>
+                            <!--En caso que haya error con la selección de la categoría del post, imprimimos un mensaje-->
+                            {!! $errors->first('category', '<span class="help-block">:message</span>') !!}
                         </div>
                         <!--Extracto del Post-->
-                        <div class="form-group">
+                        <div class="form-group {{ $errors->has('excerpt') ? 'has-error' : '' }}">
                             <label>Extracto del Post</label>
-                            <textarea name="excerpt" class="form-control" placeholder="Ingresa el extracto del post..."></textarea>
+                            <textarea name="excerpt"
+                            class="form-control"
+                            value="{{ old('excerpt') }}"
+                            placeholder="Ingresa el extracto del post...">{{old('excerpt')}}</textarea>
+                            <!--En caso que haya error con el extracto del post, imprimimos un mensaje-->
+                            {!! $errors->first('excerpt', '<span class="help-block">:message</span>') !!}
                         </div>
                         <!--Botón para Guardar el Post-->
                         <div class="form-group">

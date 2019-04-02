@@ -26,7 +26,14 @@ class PostsController extends Controller
 
     public function store(Request $request){
 
-        //Validación
+        //Validación del formulario para crear un post y posteriormente guardarlo en la basde de datos
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required',
+            'category' => 'required',
+            'excerpt' => 'required'
+        ]);
+
 
         //Guardar Post en la Base de datos
         // return Post::create($request->all());
@@ -34,7 +41,9 @@ class PostsController extends Controller
         $post->title = $request->get('title');
         $post->body = $request->get('body');
         $post->excerpt = $request->get('excerpt');
-        $post->published_at = Carbon::parse($request->get('published_at'));
+        $post->published_at = $request->filled('published_at') ? Carbon::parse($request->get('published_at')) : null;
+        //Aquí con el $request->filled le decimos que si tiene una fecha aplique el Carbon para guardar la fecha, sin embargo si
+        //nosotros no ponemos una fecha en el formulario a la hora de crear el post, se guardaría cómo null
         $post->category_id = $request->get('category');
         $post->save();
 
