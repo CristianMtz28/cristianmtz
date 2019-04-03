@@ -82,7 +82,27 @@
 
 
 
+<section class="engine"><a href="https://mobirise.info/o">portfolio website templates</a></section><section class="cid-qTkA127IK8 mbr-fullscreen mbr-parallax-background" id="header2-1">
 
+    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(35, 35, 35);"></div>
+
+    <div class="container align-center">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">
+                    El mundo es tu decisión</h1>
+
+                <p class="mbr-text pb-3 mbr-fonts-style display-5">¡Hola &amp; Bienvenido!<br>Ésta página se hizo con el fin de poder expresar mis ideas, ayudarme con el día a día y poder platicarte un poco de mí.<br>Si necesitas algo, sólo pídelo y con gusto trataré de ayudarte en lo que me sea posible.<br>¡Saludos y gracias!</p>
+                <!-- <div class="mbr-section-btn"><a class="btn btn-md btn-secondary display-4" href="http://cristianmtz.com">LEARN MORE</a></div> -->
+            </div>
+        </div>
+    </div>
+    <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+        <a href="#next">
+            <i class="mbri-down mbr-iconfont"></i>
+        </a>
+    </div>
+</section>
 
 
 
@@ -101,18 +121,24 @@
                 <article class="col-sm-4 post">
                     <div class="contenedor">
                         <div class="thumb">
-                            <a href="#"><img src="assets/images/ctr.png" width="700" alt=""></a>
+                            <a href="blog/{{ $post->id }}"><img src="assets/images/ctr.png" width="700" alt=""></a>
                         </div>
                         <div class="info">
-                            <h2 class="titulo"style="text-align: center"><a href="#" ><b>{{$post->title}}</b> </a></h2>
-                            <p class="fecha" style="text-align: center">{{$post->published_at->format('M d Y')}}</p>
-                            <p class="extracto" style="text-align: center">{{$post->excerpt}}</p>
-                            <p class="seeMore" style="text-align: center; margin-top:-35px;"><a href=""><u>Leer más...</u></a></p>
-                            <div class="categorias" style="text-align: center;">
-                                <a href="#">{{$post->category->name}}</a>
-                                <a href="#">Cine</a>
-                                <a href="#">Noticias</a>
+                            <h2 class="titulo"style="text-align: center; font-family: 'Rubik', sans-serif; font-size:25px;"><a href="blog/{{ $post->id }}" ><b>{{$post->title}}</b> </a></h2>
+                            <h6 class="categorias" style="text-align:center;"><b>Categoría:</b> <a href="#" style="text-align:center;"><b style="color:blue">{{$post->category->name}}</b></a></h6>
+                            <p class="fecha" style="text-align: center">Fecha: {{$post->published_at->format('d/m/Y')}}</p>
+                            <p class="extracto" style="text-align: center; color:#767676; font-family: 'Rubik', sans-serif;">{{$post->excerpt}}</p>
+
+                            <div class="seeMore mbr-section-btn text-center">
+                                <a href="blog/{{ $post->id }}" class="btn btn-primary display-4">
+                                    Leer más...
+                                </a>
                             </div>
+
+                            {{-- <p class="seeMore" style="text-align: center; margin-top:-35px;"><a href="blog/{{ $post->id }}"><u>Leer más...</u></a></p> --}}
+                            {{-- <div class="categorias" style="text-align: center;">
+                                <a href="#" style="text-align:center;">{{$post->category->name}}</a>
+                            </div> --}}
                         </div>
 
                     </div>
