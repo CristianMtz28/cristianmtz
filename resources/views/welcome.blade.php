@@ -121,17 +121,17 @@
                 <article class="col-sm-4 post">
                     <div class="contenedor">
                         <div class="thumb">
-                            <a href="blog/{{ $post->id }}"><img src="assets/images/ctr.png" width="700" alt=""></a>
+                            <a href="blog/{{ $post->url }}"><img src="assets/images/ctr.png" width="700" alt=""></a>
                         </div>
                         <div class="info">
-                            <h2 class="titulo"style="text-align: center; font-family: 'Rubik', sans-serif; font-size:25px;"><a href="blog/{{ $post->id }}" ><b>{{str_limit($post->title, 55, '...')}}</b> </a></h2>
+                            <h2 class="titulo"style="text-align: center; font-family: 'Rubik', sans-serif; font-size:25px;"><a href="blog/{{ $post->url }}" ><b>{{str_limit($post->title, 55, '...')}}</b> </a></h2>
                             <h6 class="categorias" style="text-align:center;"><b>Categoría:</b> <a href="#" style="text-align:center;"><b style="color:blue">{{$post->category->name}}</b></a></h6>
                             <p class="fecha" style="text-align: center">Fecha: {{$post->published_at->format('d/m/Y')}}</p>
                             <p class="extracto" style="text-align: center; color:#767676; font-family: 'Rubik', sans-serif;">{{$post->excerpt}}</p>
                             {{-- {{str_limit($post->excerpt, 160, '...')}} --}}
 
                             <div class="seeMore mbr-section-btn text-center">
-                                <a href="blog/{{ $post->id }}" class="btn btn-primary display-4">
+                                <a href="blog/{{ $post->url }}" class="btn btn-primary display-4">
                                     Leer más...
                                 </a>
                             </div>

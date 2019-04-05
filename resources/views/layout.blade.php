@@ -7,8 +7,8 @@
   <meta name="generator" content="Mobirise v4.8.10, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="/assets/images/sin-ttulo-128x95.png" type="image/x-icon">
-  <meta name="description" content="">
-  <title>Cristian Martínez | Inicio</title>
+  <meta name="description" content="@yield('meta-description', 'Artículos sobre tecnología, cine, videojuegos y de todo lo que se me ocurra, no soy experto de nada pero platicaremos de algo')">
+  <title>@yield('meta-title', config('app.name') . " | Blog")</title>
   <link rel="stylesheet" href="/assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="/assets/tether/tether.min.css">
   <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
